@@ -6,7 +6,7 @@ public class Main {
         int mid = sc.nextInt();
         int finals = sc.nextInt();
         int money = (mid >= 90 && finals >= 95) ? 100000 :
-                    (mid >= 90 && finals <= 90) ? 50000 : 0;
+                    (mid >= 90 && finals >= 90) ? 50000 : 0;
                         
         System.out.println(money);
     }
