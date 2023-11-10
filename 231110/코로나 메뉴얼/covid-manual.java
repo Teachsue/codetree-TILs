@@ -2,23 +2,26 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+    Scanner sc = new Scanner(System.in);
+        
+    String aCold = sc.next();
+    int aTem = sc.nextInt();
+    String bCold = sc.next();
+    int bTem = sc.nextInt();
+    String cCold = sc.next();
+    int cTem = sc.nextInt();
 
-        int emergencyCount = 0;
-
-        for (int i = 0; i < 3; i++) {
-            String symptom = sc.next();
-            int temperature = sc.nextInt();
-
-            if ("Y".equals(symptom) && temperature >= 37) {
-                emergencyCount++;
-            }
+    if(aCold.equals("Y") && aTem >= 37){
+        if((bCold.equals("Y") && bTem >= 37) || (cCold.equals("Y") && cTem >= 37))
+                System.out.print("E");
+        else
+                System.out.print("N");
         }
-
-        if (emergencyCount >= 2) {
-            System.out.println("E");
-        } else {
-            System.out.println("N");
+        else {
+            if((bCold.equals("Y") && bTem >= 37) && (cCold.equals("Y") && cTem >= 37))
+                System.out.print("E");
+            else
+                System.out.print("N");
         }
     }
 }
